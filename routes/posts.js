@@ -23,7 +23,7 @@ router.put("/:id", async (req, res) => {
 			await post.updateOne({ $set: req.body });
 			res.status(200).json("the post has been updated");
 		} else {
-			//not post owner
+			//if not post owner
 			res.status(403).json("You can update only your post!");
 		}
 	} catch (err) {
@@ -41,7 +41,7 @@ router.delete("/:id", async (req, res) => {
 			await post.deleteOne();
 			res.status(200).json("the post has been deleted");
 		} else {
-			//not post owner
+			//if not post owner
 			res.status(403).json("You can delete only your post!");
 		}
 	} catch (err) {
